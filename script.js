@@ -24,6 +24,12 @@ onload = function () {
             volumeBtn.classList.add("fa-volume-low")
         }
     })
+    document.querySelector(".container").addEventListener("mouseover", function () {
+        document.querySelector(".controls").style.bottom = "0"
+        document.querySelector(".container").addEventListener("mouseleave", function () {
+            document.querySelector(".controls").style.bottom = "-3.125rem"
+        })
+    })
 }
 
 function playPause() {

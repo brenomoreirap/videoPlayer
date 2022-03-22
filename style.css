@@ -15,11 +15,13 @@ body {
     background-color: #222;
     overflow: hidden;
 }
+
 .container {
     position: relative;
     width: 40rem;
     height: 22.5rem;
     box-shadow: 0 0 1.25rem .625rem black;
+    overflow: hidden;
 }
 
 video {
