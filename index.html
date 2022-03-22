@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Video Player</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <video onclick="playPause()" id="video" poster="./assets/img/thumbnail.jpg"
+            src="./assets/videos/$UICIDEBOY$ - 122 DAYS (Rick And Morty Music Video)-(1080p).mp4"
+            type="video/mp4"></video>
+
+        <article class="controls" style="bottom: 0px;">
+            <div class="left-container">
+                <i onclick="playPause()" id="playPauseBtn" class="fa-solid fa-xl fa-play"></i>
+                <i onclick="backward()" id="backwardBtn" class="fa-solid fa-xl fa-rotate-left"></i>
+                <i onclick="farward()" id="farwardBtn" class="fa-solid fa-xl fa-rotate-right"></i>
+                <i onclick="slowDown()" id="slowDownBtn" class="fa-solid fa-xl fa-minus"></i>
+                <i onclick="speedUp()" id="speedUpBtn" class="fa-solid fa-xl fa-plus"></i>
+            </div>
+            <div class="right-container">
+                <div class="volume-container">
+                    <i id="volumeBtn" class="fa-solid fa-xl fa-volume-low"></i>
+                    <input type="range" name="volume" id="volumeBar" min="0" max="100" value="30" step="1"
+                        style="display: none;">
+                </div>
+                <i onclick="fullscreen()" id="fullscreenBtn" class="fa-solid fa-xl fa-expand"></i>
+            </div>
+        </article>
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/24550e785d.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
