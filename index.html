@@ -16,26 +16,32 @@
             src="./assets/videos/$UICIDEBOY$ - 122 DAYS (Rick And Morty Music Video)-(1080p).mp4"
             type="video/mp4"></video>
 
-        <article class="controls" style="bottom: 0px;">
-            <div class="left-container">
+        <section class="controls" style="bottom: 0px;">
+            <article class="left-container">
                 <i onclick="playPause()" id="playPauseBtn" class="fa-solid fa-xl fa-play"></i>
                 <i onclick="backward()" id="backwardBtn" class="fa-solid fa-xl fa-rotate-left"></i>
                 <i onclick="farward()" id="farwardBtn" class="fa-solid fa-xl fa-rotate-right"></i>
                 <i onclick="slowDown()" id="slowDownBtn" class="fa-solid fa-xl fa-minus"></i>
                 <i onclick="speedUp()" id="speedUpBtn" class="fa-solid fa-xl fa-plus"></i>
-            </div>
-            <div class="right-container">
+            </article>
+            <article class="right-container">
                 <div class="volume-container">
                     <i id="volumeBtn" class="fa-solid fa-xl fa-volume-low"></i>
                     <input type="range" name="volume" id="volumeBar" min="0" max="100" value="30" step="1"
                         style="display: none;">
                 </div>
                 <i onclick="fullscreen()" id="fullscreenBtn" class="fa-solid fa-xl fa-expand"></i>
-            </div>
-        </article>
+            </article>
+        </section>
 
     </main>
-
+    <footer>
+        <p>Developed by Breno Moreira - </p>
+        <a href="https://github.com/brenomoreirap">
+            <i class="fa-brands fa-github fa-xl"></i>
+            <p>GitHub</p>
+        </a>
+    </footer>
     <script src="https://kit.fontawesome.com/24550e785d.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 
