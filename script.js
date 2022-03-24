@@ -63,7 +63,10 @@ function showVolumeBar() {
 }
 
 function volumeController() {
-    video.volume = volumeBar.value / 100
+
+    volumeBar.oninput = function () {
+        video.volume = this.value / 100
+    }
 
     if (video.volume == 0) {
         volumeBtn.classList.add("fa-volume-xmark")
