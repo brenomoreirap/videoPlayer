@@ -46,14 +46,14 @@ function playPause() {
     }
 }
 
-function backward() {
-    let backwardBtn = document.querySelector("#farwordBtn")
+function backwards() {
+    let backwardsBtn = document.querySelector("#farwordBtn")
 
     video.currentTime += -15
 }
 
-function farward() {
-    let farwardBtn = document.querySelector("#farwordBtn")
+function forwards() {
+    let forwardsBtn = document.querySelector("#farwordBtn")
 
     video.currentTime += 15
 }
