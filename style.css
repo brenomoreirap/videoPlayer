@@ -65,7 +65,7 @@ video {
 #volumeBar {
     -webkit-appearance: none;
     appearance: none;
-    background: linear-gradient(90deg, white 30%, #333 30%);
+    background: linear-gradient(90deg, #FFF 30%, #333 30%);
     height: .625rem;
     border-radius: .625rem;
     transition: width, 500ms;

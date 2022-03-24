@@ -8,8 +8,9 @@ let controls = document.querySelector(".controls")
 onload = function () {
     video.addEventListener("dblclick", fullscreen)
     volumeContainer.addEventListener("mouseover", showVolumeBar)
-    volumeBar.addEventListener("change", volumeController)
+    volumeBar.addEventListener("input", volumeController)
     container.addEventListener("mouseover", showControls)
+    volumeBtn.addEventListener("click", mute)
 }
 
 function playPause() {
@@ -65,17 +66,18 @@ function showVolumeBar() {
 }
 
 function volumeController() {
+    let volumeBarValue = this.value
+    let volumeBarBg = `linear-gradient(90deg, #fff ${volumeBarValue}%, #333 ${volumeBarValue}%)`
 
-    volumeBar.oninput = function () {
-        video.volume = this.value / 100
-    }
+    video.volume = this.value / 100
+    this.style.background = volumeBarBg
 
-    if (video.volume == 0) {
+    if (volumeBar.value == 0) {
         volumeBtn.classList.add("fa-volume-xmark")
         volumeBtn.classList.remove("fa-volume-high")
         volumeBtn.classList.remove("fa-volume-low")
 
-    } else if (video.volume > 0 && video.volume < 0.5) {
+    } else if (volumeBar.value > 0 && volumeBar.value < 50) {
         volumeBtn.classList.add("fa-volume-low")
         volumeBtn.classList.remove("fa-volume-high")
         volumeBtn.classList.remove("fa-volume-xmark")
@@ -84,6 +86,16 @@ function volumeController() {
         volumeBtn.classList.add("fa-volume-high")
         volumeBtn.classList.remove("fa-volume-xmark")
         volumeBtn.classList.remove("fa-volume-low")
+    }
+}
+
+function mute() {
+    if (video.volume != 0) {
+        video.volume = 0
+        volumeBar.value = 0
+    } else if (video.volume == 0) {
+        video.volume = 0.3
+        volumeBar.value = 30
     }
 
 }
