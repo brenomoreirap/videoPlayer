@@ -56,9 +56,11 @@ function showControls() {
 }
 
 function showVolumeBar() {
-    volumeBar.style.display = "inline-block"
+    volumeBar.style.opacity = "100%"
+    volumeBar.style.width = "6.25rem"
     volumeContainer.addEventListener("mouseleave", function () {
-        volumeBar.style.display = "none"
+        volumeBar.style.width = "0rem"
+        volumeBar.style.opacity = "0%"
     })
 }
 

@@ -66,9 +66,10 @@ video {
     -webkit-appearance: none;
     appearance: none;
     background: linear-gradient(90deg, white 30%, #333 30%);
-    width: 6.25rem;
     height: .625rem;
     border-radius: .625rem;
+    transition: width, 500ms;
+    opacity: 0;
 }
 
 #volumeBar::-webkit-slider-thumb { 
