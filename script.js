@@ -4,11 +4,12 @@ let volumeBtn = document.querySelector("#volumeBtn")
 let volumeBar = document.querySelector("#volumeBar")
 let container = document.querySelector(".container")
 let controls = document.querySelector(".controls")
+let volume
 
 onload = function () {
     video.addEventListener("dblclick", fullscreen)
     volumeContainer.addEventListener("mouseover", showVolumeBar)
-    volumeBar.addEventListener("input", volumeController)
+    volumeBar.addEventListener("input", (e) => volumeController(e.target.value))
     container.addEventListener("mouseover", showControls)
     volumeBtn.addEventListener("click", mute)
 }
@@ -28,24 +29,18 @@ function playPause() {
 }
 
 function backwards() {
-    let backwardsBtn = document.querySelector("#farwordBtn")
-
     video.currentTime += -15
 }
 
 function forwards() {
-    let forwardsBtn = document.querySelector("#farwordBtn")
-
     video.currentTime += 15
 }
 
 function slowDown() {
-    let slowDownBtn = document.querySelector("#slowDownBtn")
     video.playbackRate -= 0.5
 }
 
 function speedUp() {
-    let speedUpBtn = document.querySelector("#speedUpBtn")
     video.playbackRate += 0.5
 }
 
@@ -65,12 +60,12 @@ function showVolumeBar() {
     })
 }
 
-function volumeController() {
-    let volumeBarValue = this.value
-    let volumeBarBg = `linear-gradient(90deg, #fff ${volumeBarValue}%, #333 ${volumeBarValue}%)`
+function volumeController(value) {
+    volumeBar.value = value
+    let volumeBarBg = `linear-gradient(90deg, #fff ${volumeBar.value}%, #333 ${volumeBar.value}%)`
 
-    video.volume = this.value / 100
-    this.style.background = volumeBarBg
+    video.volume = value / 100
+    volumeBar.style.background = volumeBarBg
 
     if (volumeBar.value == 0) {
         volumeBtn.classList.add("fa-volume-xmark")
@@ -91,11 +86,10 @@ function volumeController() {
 
 function mute() {
     if (video.volume != 0) {
-        video.volume = 0
-        volumeBar.value = 0
+        volume = volumeBar.value
+        volumeController(0)
     } else if (video.volume == 0) {
-        video.volume = 0.3
-        volumeBar.value = 30
+        volumeController(volume)
     }
 
 }
