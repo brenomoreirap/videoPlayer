@@ -101,6 +101,5 @@ function mute() {
 }
 
 function fullscreen() {
-    let fullscreenBtn = document.querySelector("#fullscreenBtn")
-    video.requestFullscreen()
+    container.requestFullscreen()
 }
